@@ -1,12 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Items</h1>
+<div class="page-header">
+  <h1>TODO list</h1>
+</div>
 
 <div id="items">
   <% @items.each do |item| %>
-    <%= render item %>
     <p>
-      <%= link_to "Show this item", item %>
+      <h3><%= item.item %>
+      <br>
+      <%= link_to "Show", item %>
+      <%= link_to "Edit", edit_item_path(item) %>
+      <%= link_to "Destroy", item, method: :delete, data: { confirm: 'Are you sure?' } %></h3>
     </p>
   <% end %>
 </div>
